@@ -2,8 +2,8 @@ class ListAverage:
     def __init__(self, lst):
         self.lst = lst.copy()
         self.total = 0
-        for i in self.lst:
-            self.total += i
+        for num in self.lst:
+            self.total += num
 
     def add(self, num):
         self.lst.append(num)
@@ -22,5 +22,10 @@ class ListAverage:
 
 # sample usage
 # my_list = ListAverage([1, 2, 3])
-# my_list.add('d')
-# print(my_list.lst)
+# print(my_list.compute_avg_faster())
+
+# lavg = ListAverage([1, 2, 3])
+# time_taken_slower = timeit.timeit(lavg.compute_avg, number=1)
+# time_taken_faster = timeit.timeit(lavg.compute_avg_faster, number=1)
+
+# print(type(time_taken_slower))
