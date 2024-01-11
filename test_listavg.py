@@ -19,9 +19,12 @@ class TestListAverage(unittest.TestCase):
     
     def test_compute_avg_faster(self):
         lavg = ListAverage([1, 2, 3])
+
+        assert lavg.compute_avg_faster() == 2.0
+
         time_taken_slower = timeit.timeit(lavg.compute_avg, number=1)
         time_taken_faster = timeit.timeit(lavg.compute_avg_faster, number=1)
-        assert time_taken_slower < time_taken_faster
+        assert time_taken_slower > time_taken_faster
 
 if __name__ == '__main__':
     unittest.main()
