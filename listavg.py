@@ -17,3 +17,8 @@ class ListAverage:
         return 
     
 ### getting the length once will def reduce the time as no more time/memory is spent on doing that
+
+# sample usage
+# my_list = ListAverage([1, 2, 3])
+# my_list.add('d')
+# print(my_list.lst)
