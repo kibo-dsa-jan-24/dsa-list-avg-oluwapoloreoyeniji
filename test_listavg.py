@@ -10,9 +10,16 @@ class TestListAverage(unittest.TestCase):
     # add more unit tests below
     def test_add(self):
         ladd = ListAverage([1, 2, 3])
-        assert ladd.add(4) == [1, 2, 3, 4]
-        assert ladd.add() == [1, 2, 3]
-        assert ladd.add('d') == [1, 2, 3, 'd'] 
+
+        ladd.add(4)
+        assert ladd.lst == [1, 2, 3, 4]
+
+        ladd = ListAverage([1, 2, 3])
+        ladd.add('d')
+        assert ladd.lst == [1, 2, 3, 'd'] 
+
+        with self.assertRaises(TypeError):
+            ladd.add()
     
     def test_compute_avg_faster(self):
         lavg = ListAverage([1, 2, 3])
@@ -27,4 +34,7 @@ class TestListAverage(unittest.TestCase):
         time_normal = end_normal - start_normal
 
         assert time_faster > time_normal
+
+if __name__ == '__main__':
+    unittest.main()
         
